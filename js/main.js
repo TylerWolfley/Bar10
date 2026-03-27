@@ -8,16 +8,15 @@
 
   /* ── Mobile nav toggle ─────────────────────────────────── */
   const navToggle = document.getElementById("nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
+  const navMenu   = document.getElementById("nav-menu");
 
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", function () {
-      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      var expanded = navToggle.getAttribute("aria-expanded") === "true";
       navToggle.setAttribute("aria-expanded", String(!expanded));
       navMenu.classList.toggle("is-open");
     });
 
-    // Close nav when a link is clicked
     navMenu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         navMenu.classList.remove("is-open");
@@ -25,7 +24,6 @@
       });
     });
 
-    // Close nav on outside click
     document.addEventListener("click", function (e) {
       if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
         navMenu.classList.remove("is-open");
@@ -39,9 +37,9 @@
     const el = document.getElementById("hours-status");
     if (!el || typeof BAR10 === "undefined") return;
 
-    const now = new Date();
-    const dayIndex = now.getDay(); // 0 = Sun, 1 = Mon … 6 = Sat
-    const dayMap = [6, 0, 1, 2, 3, 4, 5]; // map JS day index → BAR10.hours index
+    const now      = new Date();
+    const dayIndex = now.getDay(); // 0 = Sun, 6 = Sat
+    const dayMap   = [6, 0, 1, 2, 3, 4, 5];
     const todayData = BAR10.hours[dayMap[dayIndex]];
 
     if (!todayData || !todayData.open) {
@@ -59,19 +57,20 @@
     }
 
     const nowMinutes = now.getHours() * 60 + now.getMinutes();
-    let openMin = parseTime(todayData.open);
-    let closeMin = parseTime(todayData.close);
-    // handle midnight close (e.g. 12:00 AM = next day)
+    const openMin    = parseTime(todayData.open);
+    let   closeMin   = parseTime(todayData.close);
     if (closeMin === 0) closeMin = 24 * 60;
 
     if (nowMinutes >= openMin && nowMinutes < closeMin) {
-      el.textContent = "Open now · Closes " + todayData.close;
+      el.textContent = "Open now — closes " + todayData.close;
       el.classList.add("status--open");
     } else if (nowMinutes < openMin) {
       el.textContent = "Opens today at " + todayData.open;
       el.classList.add("status--closed");
     } else {
-      el.textContent = "Closed · Opens " + (BAR10.hours[dayMap[(dayIndex + 1) % 7]]?.open || "tomorrow");
+      const nextDay = BAR10.hours[dayMap[(dayIndex + 1) % 7]];
+      const nextOpen = nextDay && nextDay.open ? nextDay.open + " tomorrow" : "Monday";
+      el.textContent = "Closed — opens at " + nextOpen;
       el.classList.add("status--closed");
     }
   }
@@ -81,69 +80,38 @@
     const el = document.getElementById("hours-table");
     if (!el || typeof BAR10 === "undefined") return;
 
-    const rows = BAR10.hours
-      .map(function (h) {
-        const hours = h.open ? h.open + " – " + h.close : "Closed";
-        return `<tr><td>${h.day}</td><td>${hours}</td></tr>`;
-      })
-      .join("");
-    el.innerHTML = `<table class="hours-table"><tbody>${rows}</tbody></table>`;
+    const rows = BAR10.hours.map(function (h) {
+      const hours = h.open ? h.open + " \u2013 " + h.close : "Closed";
+      return "<tr><td>" + h.day + "</td><td>" + hours + "</td></tr>";
+    }).join("");
+    el.innerHTML = '<table class="hours-table"><tbody>' + rows + "</tbody></table>";
   }
 
   /* ── Render menu sections ──────────────────────────────── */
   function renderMenu() {
     if (typeof BAR10 === "undefined") return;
-
     const m = BAR10.menu;
-
-    renderList("menu-pizzas", m.pizzas);
-    renderList("menu-appetizers", m.appetizers);
-    renderList("menu-salads", m.salads);
-
-    renderNote("menu-cocktails", m.cocktails.note);
-    renderNote("menu-margaritas", m.margaritas.note);
-    renderNote("menu-dessert-martinis", m.dessertMartinis.note);
-    renderNote("menu-beer", m.beer.note);
+    renderMenuList("menu-pizzas", m.pizzas);
+    renderMenuList("menu-appetizers", m.appetizers);
+    renderMenuList("menu-salads", m.salads);
+    renderMenuNote("menu-cocktails", m.cocktails.note);
+    renderMenuNote("menu-margaritas", m.margaritas.note);
+    renderMenuNote("menu-dessert-martinis", m.dessertMartinis.note);
+    renderMenuNote("menu-beer", m.beer.note);
   }
 
-  function renderList(id, items) {
+  function renderMenuList(id, items) {
     const el = document.getElementById(id);
     if (!el) return;
-    el.innerHTML = items
-      .map(function (item) {
-        return `<li class="menu-item">${item.name}</li>`;
-      })
-      .join("");
+    el.innerHTML = items.map(function (item) {
+      return '<li class="menu-item">' + item.name + "</li>";
+    }).join("");
   }
 
-  function renderNote(id, note) {
+  function renderMenuNote(id, note) {
     const el = document.getElementById(id);
     if (!el) return;
-    el.innerHTML = `<p class="menu-note">${note}</p>`;
-  }
-
-  /* ── Render featured menu items callout ─────────────────── */
-  function renderFeaturedMenuItems() {
-    const el = document.getElementById("menu-featured-callout");
-    if (!el || typeof BAR10 === "undefined" || !BAR10.featuredItems) return;
-
-    el.innerHTML =
-      '<span class="menu-featured-heading">Popular Right Now</span>' +
-      '<ul class="menu-featured-grid" aria-label="Featured menu items">' +
-      BAR10.featuredItems
-        .map(function (item) {
-          return (
-            '<li class="menu-featured-item">' +
-            '<span class="menu-featured-emoji" aria-hidden="true">' + item.emoji + "</span>" +
-            "<div>" +
-            "<h3>" + item.name + "</h3>" +
-            "<p>" + item.description + "</p>" +
-            "</div>" +
-            "</li>"
-          );
-        })
-        .join("") +
-      "</ul>";
+    el.innerHTML = '<p class="menu-note">' + note + "</p>";
   }
 
   /* ── Render events ─────────────────────────────────────── */
@@ -151,39 +119,37 @@
     const el = document.getElementById("events-list");
     if (!el || typeof BAR10 === "undefined") return;
 
-    el.innerHTML = BAR10.events
-      .map(function (ev) {
-        return `
-        <article class="event-card">
-          <div class="event-icon" aria-hidden="true">${ev.icon}</div>
-          <div class="event-body">
-            <h3 class="event-title">${ev.title}</h3>
-            <p class="event-meta">${ev.day}${ev.time !== "Varies" ? " · " + ev.time : ""}</p>
-            <p class="event-desc">${ev.description}</p>
-          </div>
-        </article>`;
-      })
-      .join("");
+    el.innerHTML = BAR10.events.map(function (ev) {
+      return (
+        '<article class="event-card">' +
+        '<div class="event-card-meta">' +
+        '<div class="event-card-day">' + ev.day + "</div>" +
+        (ev.time && ev.time !== "Varies" ? '<div class="event-card-time">' + ev.time + "</div>" : "") +
+        "</div>" +
+        '<div class="event-card-body">' +
+        "<h3>" + ev.title + "</h3>" +
+        "<p>" + ev.description + "</p>" +
+        "</div>" +
+        "</article>"
+      );
+    }).join("");
   }
 
   /* ── Populate contact details ──────────────────────────── */
   function populateContact() {
     if (typeof BAR10 === "undefined") return;
 
-    const phoneEls = document.querySelectorAll("[data-contact='phone']");
-    phoneEls.forEach(function (el) {
+    document.querySelectorAll("[data-contact='phone']").forEach(function (el) {
       el.textContent = BAR10.phone;
       if (el.tagName === "A") el.href = BAR10.phoneHref;
     });
 
-    const emailEls = document.querySelectorAll("[data-contact='email']");
-    emailEls.forEach(function (el) {
+    document.querySelectorAll("[data-contact='email']").forEach(function (el) {
       el.textContent = BAR10.email;
       if (el.tagName === "A") el.href = "mailto:" + BAR10.email;
     });
 
-    const addrEls = document.querySelectorAll("[data-contact='address']");
-    addrEls.forEach(function (el) {
+    document.querySelectorAll("[data-contact='address']").forEach(function (el) {
       el.textContent = BAR10.address.full;
     });
   }
@@ -193,7 +159,6 @@
     buildHoursStatus();
     renderHoursTable();
     renderMenu();
-    renderFeaturedMenuItems();
     renderEvents();
     populateContact();
   });
