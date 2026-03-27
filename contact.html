@@ -17,6 +17,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BarOrPub", "Restaurant"],
+    "name": "Bar 10",
+    "url": "https://bar10riverton.com",
+    "telephone": "+1-307-856-2337",
+    "email": "bar10wyo@gmail.com",
+    "description": "Wyoming Bred. Craft Beer. Craft Cocktails. Artisan Pizza. Raising the Bar in County Ten.",
+    "servesCuisine": ["Pizza", "American", "Bar Food"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "114 S Broadway Ave",
+      "addressLocality": "Riverton",
+      "addressRegion": "WY",
+      "postalCode": "82501",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.0236,
+      "longitude": -108.3809
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "16:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "16:00", "closes": "24:00" }
+    ],
+    "menu": "https://bar10riverton.com/menu.html",
+    "sameAs": [
+      "https://www.facebook.com/bar10riverton",
+      "https://www.instagram.com/bar10riverton"
+    ]
+  }
+  </script>
 </head>
 <body class="page-body">
 
@@ -209,6 +246,8 @@
           <a href="about.html">About</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
+          <a href="https://www.facebook.com/bar10riverton" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/bar10riverton" target="_blank" rel="noopener noreferrer">Instagram</a>
         </nav>
       </div>
     </div>

@@ -122,6 +122,30 @@
     el.innerHTML = `<p class="menu-note">${note}</p>`;
   }
 
+  /* ── Render featured menu items callout ─────────────────── */
+  function renderFeaturedMenuItems() {
+    const el = document.getElementById("menu-featured-callout");
+    if (!el || typeof BAR10 === "undefined" || !BAR10.featuredItems) return;
+
+    el.innerHTML =
+      '<span class="menu-featured-heading">Popular Right Now</span>' +
+      '<ul class="menu-featured-grid" aria-label="Featured menu items">' +
+      BAR10.featuredItems
+        .map(function (item) {
+          return (
+            '<li class="menu-featured-item">' +
+            '<span class="menu-featured-emoji" aria-hidden="true">' + item.emoji + "</span>" +
+            "<div>" +
+            "<h3>" + item.name + "</h3>" +
+            "<p>" + item.description + "</p>" +
+            "</div>" +
+            "</li>"
+          );
+        })
+        .join("") +
+      "</ul>";
+  }
+
   /* ── Render events ─────────────────────────────────────── */
   function renderEvents() {
     const el = document.getElementById("events-list");
@@ -169,6 +193,7 @@
     buildHoursStatus();
     renderHoursTable();
     renderMenu();
+    renderFeaturedMenuItems();
     renderEvents();
     populateContact();
   });
