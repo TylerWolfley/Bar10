@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 
@@ -38,11 +38,7 @@
       "postalCode": "82501",
       "addressCountry": "US"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.0236,
-      "longitude": -108.3809
-    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.0236, "longitude": -108.3809 },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "16:00", "closes": "23:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "16:00", "closes": "24:00" }
@@ -79,134 +75,104 @@
 
   <main>
 
-    <section class="page-hero" aria-label="Contact page header">
+    <section class="page-hero" aria-label="Contact and Location">
       <div class="container">
         <span class="section-label">Get in Touch</span>
-        <h1>Contact & Location</h1>
+        <h1>Contact &amp; Location</h1>
         <p>
-          Find us on Broadway in downtown Riverton. Give us a call, send an email,
-          or just walk in when we're open.
+          On Broadway in downtown Riverton. Give us a call, send an email,
+          or walk in when we're open.
         </p>
       </div>
     </section>
 
-    <!-- ── Contact grid ────────────────────────────────────── -->
+    <!-- ── Contact layout ─────────────────────────────────────── -->
     <section aria-labelledby="contact-info-heading">
       <div class="container">
-        <div class="contact-grid">
+        <div class="contact-layout">
 
           <!-- Contact details -->
           <div>
-            <h2 class="section-title" id="contact-info-heading" style="font-size: 1.3rem; margin-bottom: 1.5rem;">Contact Info</h2>
+            <span class="contact-section-heading">Contact Info</span>
 
-            <div class="contact-card">
+            <div class="contact-detail-row">
+              <div class="contact-detail-label">Address</div>
+              <div class="contact-detail-value">
+                <span data-contact="address">114 S Broadway Ave, Riverton, WY 82501</span><br>
+                <a href="https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501" class="contact-map-link" target="_blank" rel="noopener noreferrer" aria-label="Open Bar 10 location in Google Maps">
+                  Open in Google Maps &nearr;
+                </a>
+              </div>
+            </div>
 
-              <div class="contact-row">
-                <span class="contact-row-icon" aria-hidden="true">📍</span>
-                <div>
-                  <div class="contact-row-label">Address</div>
-                  <div class="contact-row-value">
-                    <span data-contact="address">114 S Broadway Ave, Riverton, WY 82501</span>
-                  </div>
-                  <a
-                    href="https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501"
-                    class="map-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open Bar 10 location in Google Maps"
-                  >
-                    Open in Google Maps ↗
+            <div class="contact-detail-row">
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-value">
+                <a href="tel:+13078562337" data-contact="phone">(307) 856-2337</a>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">
+                <a href="mailto:bar10wyo@gmail.com" data-contact="email">bar10wyo@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-label">Social</div>
+              <div class="contact-detail-value">
+                <div class="social-links" style="margin-top: 0.35rem;">
+                  <a href="https://www.facebook.com/bar10riverton" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Bar 10 on Facebook">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                  </a>
+                  <a href="https://www.instagram.com/bar10riverton" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Bar 10 on Instagram">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
                   </a>
                 </div>
               </div>
-
-              <div class="contact-row">
-                <span class="contact-row-icon" aria-hidden="true">📞</span>
-                <div>
-                  <div class="contact-row-label">Phone</div>
-                  <div class="contact-row-value">
-                    <a href="tel:+13078562337" data-contact="phone">(307) 856-2337</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-row">
-                <span class="contact-row-icon" aria-hidden="true">✉️</span>
-                <div>
-                  <div class="contact-row-label">Email</div>
-                  <div class="contact-row-value">
-                    <a href="mailto:bar10wyo@gmail.com" data-contact="email">bar10wyo@gmail.com</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-row" style="margin-bottom: 0;">
-                <span class="contact-row-icon" aria-hidden="true">📱</span>
-                <div>
-                  <div class="contact-row-label">Follow Us</div>
-                  <div style="margin-top: 0.5rem;">
-                    <div class="social-links">
-                      <a href="https://www.facebook.com/bar10riverton" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Bar 10 on Facebook">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        Facebook
-                      </a>
-                      <a href="https://www.instagram.com/bar10riverton" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Bar 10 on Instagram">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Instagram
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
-            <!-- Call CTA note -->
-            <div class="menu-pricing-note" style="margin-top: 1.25rem; text-align: left;" role="note">
-              <strong>Trivia nights and busy weekends fill up.</strong> Call ahead
-              to plan your visit, ask about events, or check on group seating:
-              <a href="tel:+13078562337">(307) 856-2337</a>
-            </div>
           </div>
 
-          <!-- Hours -->
+          <!-- Hours & Map -->
           <div>
-            <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 1.5rem;">Hours</h2>
-            <div class="contact-card">
-              <div id="hours-status" aria-live="polite" style="margin-bottom: 1.25rem;"></div>
-              <div id="hours-table"></div>
-              <p class="text-dim" style="font-size: 0.8rem; margin-top: 1rem;">
-                Hours may vary on holidays. Follow us on social or call ahead to confirm.
-              </p>
-            </div>
+            <span class="contact-section-heading">Hours &amp; Directions</span>
 
-            <!-- Map link block -->
-            <div class="contact-card" style="margin-top: 1.25rem;">
-              <h2 style="font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border);">Directions</h2>
-              <p class="text-dim" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                We're on South Broadway Avenue in downtown Riverton, Wyoming.
-              </p>
-              <a
-                href="https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501"
-                class="btn btn-ghost"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open Bar 10 location in Google Maps"
-              >
-                Open Google Maps ↗
-              </a>
-              <div style="margin-top: 1.25rem;">
-                <iframe
-                  title="Bar 10 location map — 114 S Broadway Ave, Riverton, WY"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4!2d-108.3809!3d43.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5353c9f2b1a5a1e1%3A0x0!2s114+S+Broadway+Ave%2C+Riverton%2C+WY+82501!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                  width="100%"
-                  height="220"
-                  style="border:0; border-radius: var(--radius); display: block;"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+            <div id="hours-status" aria-live="polite"></div>
+            <div id="hours-table" style="margin-bottom: 2rem;"></div>
+
+            <p class="text-dim" style="font-size: 0.78rem; margin-bottom: 2.5rem;">
+              Hours may vary on holidays. Call ahead to confirm.
+            </p>
+
+            <p class="text-dim" style="font-size: 0.875rem; margin-bottom: 1rem;">
+              On South Broadway Avenue in downtown Riverton, Wyoming.
+            </p>
+            <a
+              href="https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Bar 10 location in Google Maps"
+              style="margin-bottom: 1.5rem; display: inline-flex;"
+            >
+              Open Google Maps &nearr;
+            </a>
+
+            <div style="margin-top: 1.5rem;">
+              <iframe
+                title="Bar 10 location map — 114 S Broadway Ave, Riverton, WY"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4!2d-108.3809!3d43.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5353c9f2b1a5a1e1%3A0x0!2s114+S+Broadway+Ave%2C+Riverton%2C+WY+82501!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                width="100%"
+                height="240"
+                style="border: 0; border-radius: var(--radius); display: block; filter: grayscale(30%);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 
@@ -214,20 +180,21 @@
       </div>
     </section>
 
-    <!-- ── Final CTA ───────────────────────────────────────── -->
-    <section class="cta-banner" aria-label="Final call to action">
+    <!-- ── Final CTA ───────────────────────────────────────────── -->
+    <div class="cta-bar">
       <div class="container">
-        <h2>We'll See You Tonight</h2>
-        <p>
-          Downtown Riverton is easy to find. Bar 10 opens at 4 PM Monday
-          through Saturday. No reservation needed for most nights — just walk in.
-        </p>
-        <div class="cta-group">
-          <a href="tel:+13078562337" class="btn btn-primary">📞 (307) 856-2337</a>
-          <a href="menu.html" class="btn btn-outline">View the Menu</a>
+        <div class="cta-bar-inner">
+          <div class="cta-bar-text">
+            <h2>We'll see you tonight.</h2>
+            <p>Open Monday through Saturday at 4 PM. No reservation needed for most nights.</p>
+          </div>
+          <div class="cta-bar-actions">
+            <a href="tel:+13078562337" class="btn btn-primary">(307) 856-2337</a>
+            <a href="menu.html" class="btn btn-outline">View the Menu</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
   </main>
 
@@ -236,8 +203,11 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand"><span>Bar</span> 10</div>
-          <div class="footer-copy">114 S Broadway Ave · Riverton, WY 82501 · <a href="tel:+13078562337">(307) 856-2337</a></div>
-          <div class="footer-copy" style="margin-top: 0.25rem;">Wyoming Bred. Raising the Bar in County Ten.</div>
+          <div class="footer-copy">
+            114 S Broadway Ave &middot; Riverton, WY 82501<br>
+            <a href="tel:+13078562337">(307) 856-2337</a> &middot; <a href="mailto:bar10wyo@gmail.com">bar10wyo@gmail.com</a>
+          </div>
+          <div class="footer-tagline">Wyoming Bred. Raising the Bar in County Ten.</div>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="index.html">Home</a>
@@ -246,9 +216,11 @@
           <a href="about.html">About</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-social">
           <a href="https://www.facebook.com/bar10riverton" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="https://www.instagram.com/bar10riverton" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </nav>
+        </div>
       </div>
     </div>
   </footer>
