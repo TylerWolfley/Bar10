@@ -207,19 +207,19 @@ section {
 }
 
 .nav-brand {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--color-cream);
-  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.nav-brand span {
-  color: var(--color-amber);
+.nav-logo {
+  height: 46px;
+  width: auto;
+  display: block;
 }
 
-.nav-brand:hover {
-  color: var(--color-cream);
+.nav-brand:hover .nav-logo {
+  opacity: 0.85;
 }
 
 .nav-toggle {
@@ -744,14 +744,13 @@ section {
 }
 
 .footer-brand {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-cream);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.footer-brand span {
-  color: var(--color-amber);
+.footer-logo {
+  height: 80px;
+  width: auto;
+  display: block;
 }
 
 .footer-copy {
