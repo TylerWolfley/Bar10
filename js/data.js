@@ -3,7 +3,7 @@
 
 const BAR10 = {
   name: "Bar 10",
-  tagline: "Wyoming Bred. Craft Beer. Craft Cocktails. Artisan Pizza.",
+  tagline: "Wyoming Bred. Craft Beer. Craft Cocktails. Artisan Pizza. Raising the Bar in County Ten.",
   address: {
     street: "114 S Broadway Ave",
     city: "Riverton",
@@ -14,6 +14,7 @@ const BAR10 = {
   phone: "(307) 856-2337",
   phoneHref: "tel:+13078562337",
   email: "bar10wyo@gmail.com",
+  mapLink: "https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501",
   social: {
     facebook: "https://www.facebook.com/bar10riverton",
     instagram: "https://www.instagram.com/bar10riverton",
@@ -76,6 +77,38 @@ const BAR10 = {
       note: "We rotate local Wyoming taps. Ask your server what's pouring tonight.",
     },
   },
+  featuredItems: [
+    {
+      name: "Stuffed Mushrooms",
+      description: "A local favorite from the appetizer menu. Rich, satisfying, and worth starting with.",
+      emoji: "🍄",
+      image: "images/stuffed-mushrooms.jpg",
+    },
+    {
+      name: "Whiskey BBQ Sliders",
+      description: "Tender, smoky, and built for sharing over a cold drink.",
+      emoji: "🍔",
+      image: "images/whiskey-bbq-sliders.jpg",
+    },
+    {
+      name: "Pork Street Tacos",
+      description: "Street-style and packed with flavor. A crowd favorite.",
+      emoji: "🌮",
+      image: "images/pork-street-tacos.jpg",
+    },
+    {
+      name: "Meatball Sliders",
+      description: "Hearty sliders that hit the spot before or after a round.",
+      emoji: "🍝",
+      image: "images/meatball-sliders.jpg",
+    },
+    {
+      name: "Chicken Pot Pie",
+      description: "Comfort food done right — warm and filling.",
+      emoji: "🥧",
+      image: "images/chicken-pot-pie.jpg",
+    },
+  ],
   events: [
     {
       title: "Trivia Night",

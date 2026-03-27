@@ -1154,3 +1154,182 @@ section {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ── At the Bar (drinks section) ───────────────────────────── */
+.bar-section {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .bar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bar-card {
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: border-color var(--transition);
+}
+
+.bar-card:hover {
+  border-color: var(--color-amber);
+}
+
+.bar-card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.bar-card h3 {
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  color: var(--color-amber);
+  margin-bottom: 0.5rem;
+}
+
+.bar-card p {
+  font-size: 0.875rem;
+  color: var(--color-cream-dim);
+  line-height: 1.55;
+}
+
+/* ── Social follow section ─────────────────────────────────── */
+.social-section {
+  background: var(--color-surface2);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.social-follow-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.social-follow-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem 3rem;
+  text-decoration: none;
+  color: var(--color-cream);
+  transition: border-color var(--transition), transform var(--transition);
+  min-width: 200px;
+  text-align: center;
+}
+
+.social-follow-card:hover {
+  border-color: var(--color-amber);
+  color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+.social-follow-card svg {
+  color: var(--color-amber);
+  margin-bottom: 0.35rem;
+}
+
+.social-follow-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-cream);
+  font-weight: 700;
+}
+
+.social-follow-handle {
+  font-size: 0.85rem;
+  color: var(--color-amber);
+  font-weight: 600;
+}
+
+.social-follow-desc {
+  font-size: 0.8rem;
+  color: var(--color-cream-dim);
+  margin-top: 0.15rem;
+}
+
+/* ── Menu featured callout ─────────────────────────────────── */
+.menu-featured-callout {
+  margin-bottom: 2.5rem;
+}
+
+.menu-featured-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.menu-featured-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 500px) {
+  .menu-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .menu-featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.menu-featured-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  transition: border-color var(--transition);
+}
+
+.menu-featured-item:hover {
+  border-color: var(--color-amber);
+}
+
+.menu-featured-emoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.menu-featured-item h3 {
+  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  color: var(--color-cream);
+  margin-bottom: 0.2rem;
+}
+
+.menu-featured-item p {
+  font-size: 0.8rem;
+  color: var(--color-cream-dim);
+  line-height: 1.45;
+}
