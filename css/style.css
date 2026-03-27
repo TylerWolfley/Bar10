@@ -427,7 +427,7 @@ section {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0 0;
+  gap: 0;
 }
 
 .identity-item {
@@ -543,8 +543,19 @@ section {
 }
 
 /* ── Events preview ────────────────────────────────────────── */
-.events-preview {
-  background-color: var(--color-surface);
+.events-preview-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 400px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.events-preview-cta {
+  margin-top: 0;
+}
+
+.events-preview {  background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 6rem 0;
@@ -1325,4 +1336,80 @@ section {
   gap: 1rem;
   flex-wrap: wrap;
   flex-shrink: 0;
+}
+
+/* ── About page additional ─────────────────────────────────── */
+.about-pillars--right {
+  margin-top: 0.5rem;
+}
+
+.county-ten-section {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.county-ten-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.county-ten-copy {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 1rem auto 2rem;
+}
+
+.county-ten-cta {
+  justify-content: center;
+}
+
+/* ── Events page additional ────────────────────────────────── */
+.event-feature-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 440px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-bar--surface {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Contact page additional ───────────────────────────────── */
+.contact-social-links {
+  margin-top: 0.35rem;
+}
+
+.contact-hours-table {
+  margin-bottom: 2rem;
+}
+
+.contact-hours-note {
+  font-size: 0.78rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-directions-note {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.contact-map-btn {
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+}
+
+.contact-map-embed {
+  margin-top: 1.5rem;
+}
+
+.contact-map-embed iframe {
+  border: 0;
+  border-radius: var(--radius);
+  display: block;
+  filter: grayscale(30%);
 }
