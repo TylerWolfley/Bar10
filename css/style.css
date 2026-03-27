@@ -342,8 +342,8 @@ section {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(135deg, rgba(17,17,16,0.95) 0%, rgba(28,24,18,0.80) 100%),
-    url('../images/hero-bg.jpg') center/cover no-repeat;
+    linear-gradient(to right, rgba(11,10,9,0.88) 0%, rgba(11,10,9,0.62) 50%, rgba(11,10,9,0.35) 100%),
+    url('../images/bar10.jpg') center/cover no-repeat;
   z-index: 0;
 }
 
@@ -1332,4 +1332,90 @@ section {
   font-size: 0.8rem;
   color: var(--color-cream-dim);
   line-height: 1.45;
+}
+
+/* ── Homepage menu preview ─────────────────────────────────── */
+.preview-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.preview-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color var(--transition);
+}
+
+.preview-card:hover {
+  border-color: var(--color-amber);
+}
+
+.preview-card-icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.preview-card h3 {
+  font-size: 1.05rem;
+  color: var(--color-cream);
+  margin-bottom: 0.45rem;
+}
+
+.preview-card p {
+  font-size: 0.875rem;
+  color: var(--color-cream-dim);
+  line-height: 1.6;
+}
+
+/* ── Homepage Find Us strip ────────────────────────────────── */
+.find-us-strip {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3.5rem 0;
+}
+
+.find-us-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .find-us-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.find-us-address {
+  font-size: 1rem;
+  color: var(--color-cream);
+  margin-top: 0.35rem;
+}
+
+.find-us-hours {
+  font-size: 0.875rem;
+  color: var(--color-cream-dim);
+  margin-top: 0.4rem;
+  line-height: 1.6;
+}
+
+.find-us-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
 }
