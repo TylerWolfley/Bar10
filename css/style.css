@@ -21,6 +21,7 @@
   /* ── Accent — rich warm gold ── */
   --color-amber:     #c49038;   /* rich warm gold */
   --color-amber-lt:  #d4a84e;   /* lighter gold on hover */
+  --color-red:       #cc2222;   /* bold red — hero accent */
 
   /* ── Text — warm cream on dark backgrounds ── */
   --color-cream:     #ede5d8;   /* warm cream — primary text */
@@ -459,6 +460,10 @@ section {
   color: var(--color-dark-text);
   margin-bottom: 1.5rem;
   line-height: 1.05;
+}
+
+.hero-h1-red {
+  color: var(--color-red);
 }
 
 .hero-sub {
