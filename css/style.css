@@ -21,6 +21,7 @@
   /* ── Accent — rich warm gold ── */
   --color-amber:     #c49038;   /* rich warm gold */
   --color-amber-lt:  #d4a84e;   /* lighter gold on hover */
+  --color-brand-red: #a5161d;   /* Bar 10 brand red — BAR / TEN headline */
 
   /* ── Text — warm cream on dark backgrounds ── */
   --color-cream:     #ede5d8;   /* warm cream — primary text */
@@ -494,7 +495,7 @@ section {
   display: block;
   width: 3.15ch;
   text-align: center;
-  color: #a5161d;
+  color: var(--color-brand-red);
   font-size: 0.56em;
   line-height: 1;
   font-weight: 700;
