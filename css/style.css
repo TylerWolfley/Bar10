@@ -38,17 +38,16 @@
 
   --max-width:          1160px;
   --utility-bar-height: 32px;
-  --brand-height:       72px;
-  --nav-height:         44px;
-  --header-total:       calc(var(--utility-bar-height) + var(--brand-height) + var(--nav-height));
+  --header-height:      58px;
+  --header-total:       calc(var(--utility-bar-height) + var(--header-height));
   --radius:             3px;
   --transition:         0.2s ease;
 }
 
-/* Mobile: utility bar and nav row are hidden; only brand row is fixed */
+/* Mobile: utility bar hidden; only combined header row is fixed */
 @media (max-width: 767px) {
   :root {
-    --header-total: var(--brand-height);
+    --header-total: var(--header-height);
   }
 }
 
@@ -256,6 +255,7 @@ section {
 }
 
 /* ── Site header (centered brand row) ──────────────────────── */
+/* ── Site header — single integrated row: logo left, nav right ─ */
 .site-header {
   border-bottom: 1px solid var(--color-border);
 }
@@ -263,19 +263,19 @@ section {
 .site-header-inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: var(--brand-height);
+  justify-content: space-between;
+  height: var(--header-height);
   position: relative;
 }
 
 .header-brand {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
 }
 
 .header-logo {
-  height: 52px;
+  height: 42px;
   width: auto;
   display: block;
 }
@@ -284,30 +284,13 @@ section {
   opacity: 0.85;
 }
 
-/* ── Nav ───────────────────────────────────────────────────── */
+/* ── Nav — lives inside site-header-inner ──────────────────── */
 .site-nav {
-  border-bottom: 1px solid var(--color-border);
-  overflow: visible;
-}
-
-/* Mobile: collapse nav row to 0 — toggle lives in site-header */
-@media (max-width: 767px) {
-  .site-nav {
-    height: 0;
-    border-bottom: none;
-  }
-}
-
-.nav-inner {
-  height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .nav-toggle {
-  position: absolute;
-  right: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,6 +301,7 @@ section {
   border: none;
   cursor: pointer;
   padding: 0.25rem;
+  flex-shrink: 0;
 }
 
 .nav-toggle span {
@@ -348,6 +332,7 @@ section {
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   padding: 1.25rem 1.5rem 1.75rem;
+  z-index: 10;
 }
 
 .nav-menu.is-open {
@@ -392,8 +377,7 @@ section {
     border: none;
     padding: 0;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    gap: 0;
   }
 
   .nav-menu ul {
@@ -410,7 +394,11 @@ section {
   }
 
   .nav-cta {
-    display: none;
+    display: inline-flex;
+    margin-top: 0;
+    margin-left: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.72rem;
   }
 }
 
@@ -841,100 +829,160 @@ section {
 /* ── Footer ────────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--color-dark);
-  border-top: 1px solid var(--color-dark-border);
-  padding: 2rem 0;
+  border-top: 1px solid var(--color-amber);
   color: var(--color-dark-dim);
 }
 
-.footer-inner {
+.footer-main {
+  padding: 3rem 0 2.5rem;
+}
+
+.footer-grid {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 640px) {
-  .footer-inner {
-    grid-template-columns: auto 1fr auto;
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+    gap: 2rem;
     align-items: start;
-    gap: 3rem;
   }
 }
 
+@media (min-width: 640px) and (max-width: 899px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-col-heading {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  margin-bottom: 1rem;
+}
+
+/* Col 1: Brand */
 .footer-brand {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
 }
 
 .footer-logo {
-  height: 80px;
+  height: 52px;
   width: auto;
   display: block;
 }
 
-.footer-copy {
-  font-size: 0.78rem;
-  color: var(--color-dark-dim);
-  line-height: 1.6;
-}
-
-.footer-copy a {
-  color: var(--color-dark-dim);
-}
-
-.footer-copy a:hover {
-  color: var(--color-dark-text);
-}
-
 .footer-tagline {
   font-size: 0.72rem;
-  color: rgba(168, 153, 138, 0.45);
-  letter-spacing: 0.08em;
-  margin-top: 0.75rem;
+  color: rgba(168, 153, 138, 0.5);
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+  margin-top: 0.5rem;
 }
 
+/* Col 2: Nav links */
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-}
-
-@media (min-width: 640px) {
-  .footer-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem 1.5rem;
-  }
+  gap: 0.55rem;
 }
 
 .footer-nav a {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--color-dark-dim);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  transition: color var(--transition);
 }
 
 .footer-nav a:hover {
-  color: var(--color-dark-text);
+  color: var(--color-cream);
+}
+
+/* Col 3: Hours */
+.footer-hours {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.footer-hours-day {
+  color: var(--color-dark-dim);
+}
+
+.footer-hours-time {
+  color: rgba(154, 139, 124, 0.7);
+  text-align: right;
+}
+
+/* Col 4: Contact + Social */
+.footer-address {
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--color-dark-dim);
+  line-height: 1.75;
+}
+
+.footer-address a {
+  color: var(--color-dark-dim);
+  transition: color var(--transition);
+}
+
+.footer-address a:hover {
+  color: var(--color-cream);
 }
 
 .footer-social {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start;
-}
-
-@media (min-width: 640px) {
-  .footer-social {
-    align-items: flex-end;
-  }
+  gap: 1rem;
+  margin-top: 1.25rem;
 }
 
 .footer-social a {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--color-dark-dim);
+  transition: color var(--transition);
 }
 
 .footer-social a:hover {
-  color: var(--color-dark-text);
+  color: var(--color-amber);
 }
+
+/* Footer bottom bar */
+.footer-bottom {
+  border-top: 1px solid var(--color-dark-border);
+  padding: 1rem 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(154, 139, 124, 0.45);
+  letter-spacing: 0.04em;
+}
+
 
 /* ── Page hero (inner pages) ───────────────────────────────── */
 .page-hero {
