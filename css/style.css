@@ -37,18 +37,10 @@
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
 
   --max-width:          1160px;
-  --utility-bar-height: 32px;
-  --header-height:      58px;
-  --header-total:       calc(var(--utility-bar-height) + var(--header-height));
+  --header-height:      72px;
+  --header-total:       var(--header-height);
   --radius:             3px;
   --transition:         0.2s ease;
-}
-
-/* Mobile: utility bar hidden; only combined header row is fixed */
-@media (max-width: 767px) {
-  :root {
-    --header-total: var(--header-height);
-  }
 }
 
 html {
@@ -214,20 +206,13 @@ section {
   background-color: rgba(15, 13, 11, 0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-top: 3px solid var(--color-amber);
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* ── Utility bar ───────────────────────────────────────────── */
+/* ── Utility bar — hidden ──────────────────────────────────── */
 .utility-bar {
-  height: var(--utility-bar-height);
-  border-bottom: 1px solid rgba(44, 37, 32, 0.7);
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  .utility-bar {
-    display: none;
-  }
+  display: none;
 }
 
 .utility-bar-inner {
@@ -254,10 +239,9 @@ section {
   font-size: 0.6rem;
 }
 
-/* ── Site header (centered brand row) ──────────────────────── */
 /* ── Site header — single integrated row: logo left, nav right ─ */
 .site-header {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-lt);
 }
 
 .site-header-inner {
@@ -275,9 +259,10 @@ section {
 }
 
 .header-logo {
-  height: 42px;
+  height: 52px;
   width: auto;
   display: block;
+  transition: opacity var(--transition);
 }
 
 .header-brand:hover .header-logo {
@@ -386,19 +371,43 @@ section {
   }
 
   .nav-menu a {
-    padding: 0.35rem 0.875rem;
+    padding: 0.4rem 0.9rem;
     border: none;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
+    position: relative;
+  }
+
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0.9rem;
+    right: 0.9rem;
+    height: 2px;
+    background-color: var(--color-amber);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition);
+  }
+
+  .nav-menu a:hover::after,
+  .nav-menu a[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  .nav-cta::after {
+    display: none;
   }
 
   .nav-cta {
     display: inline-flex;
     margin-top: 0;
-    margin-left: 1rem;
-    padding: 0.4rem 1rem;
-    font-size: 0.72rem;
+    margin-left: 1.25rem;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -834,12 +843,12 @@ section {
 }
 
 .footer-main {
-  padding: 3rem 0 2.5rem;
+  padding: 1.75rem 0 1.25rem;
 }
 
 .footer-grid {
   display: grid;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 
 @media (min-width: 640px) {
@@ -966,7 +975,7 @@ section {
 /* Footer bottom bar */
 .footer-bottom {
   border-top: 1px solid var(--color-dark-border);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .footer-bottom-inner {
