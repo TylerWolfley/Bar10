@@ -79,25 +79,37 @@
 
         <!-- Jump nav -->
         <nav class="menu-jump-nav" aria-label="Jump to menu section">
-          <a href="#pizzas">Specialty Pizzas</a>
+          <a href="#favorites">Favorites</a>
+          <a href="#pizzas">Pizzas</a>
           <a href="#appetizers">Appetizers</a>
           <a href="#salads">Salads</a>
-          <a href="#cocktails">Cocktails</a>
-          <a href="#margaritas">Margaritas</a>
-          <a href="#dessert-martinis">Dessert Martinis</a>
-          <a href="#beer">Beer</a>
+          <a href="#pastas">Pastas</a>
+          <a href="#build-your-own">Build Your Own</a>
+          <a href="#desserts">Desserts</a>
+          <a href="#catering">Catering &amp; Hours</a>
         </nav>
 
         <div class="menu-sections">
 
-          <!-- Specialty Pizzas -->
+          <!-- Favorites -->
+          <section id="favorites" class="menu-section" aria-labelledby="favorites-heading">
+            <div class="menu-section-header">
+              <h2 id="favorites-heading">Favorites</h2>
+            </div>
+            <ul id="menu-favorites" class="menu-items-list" aria-label="Favorites">
+              <!-- Populated by JS -->
+            </ul>
+          </section>
+
+          <!-- Pizzas -->
           <section id="pizzas" class="menu-section" aria-labelledby="pizzas-heading">
             <div class="menu-section-header">
-              <h2 id="pizzas-heading">Specialty Pizzas</h2>
+              <h2 id="pizzas-heading">Pizzas</h2>
+              <p id="menu-pizza-crusts" class="menu-section-note"></p>
             </div>
-            <div id="menu-pizzas" class="menu-pizza-grid" aria-label="Specialty pizza options">
+            <ul id="menu-pizzas" class="menu-pizza-list" aria-label="Specialty pizzas">
               <!-- Populated by JS -->
-            </div>
+            </ul>
           </section>
 
           <!-- Appetizers -->
@@ -105,7 +117,7 @@
             <div class="menu-section-header">
               <h2 id="appetizers-heading">Appetizers</h2>
             </div>
-            <ul id="menu-appetizers" class="menu-items-list" aria-label="Appetizer options">
+            <ul id="menu-appetizers" class="menu-items-list" aria-label="Appetizers">
               <!-- Populated by JS -->
             </ul>
           </section>
@@ -114,42 +126,53 @@
           <section id="salads" class="menu-section" aria-labelledby="salads-heading">
             <div class="menu-section-header">
               <h2 id="salads-heading">Salads</h2>
+              <p id="menu-salads-note" class="menu-section-note"></p>
             </div>
-            <ul id="menu-salads" class="menu-items-list" aria-label="Salad options">
+            <ul id="menu-salads" class="menu-items-list" aria-label="Salads">
               <!-- Populated by JS -->
             </ul>
           </section>
 
-          <!-- Cocktails -->
-          <section id="cocktails" class="menu-section" aria-labelledby="cocktails-heading">
+          <!-- Pastas -->
+          <section id="pastas" class="menu-section" aria-labelledby="pastas-heading">
             <div class="menu-section-header">
-              <h2 id="cocktails-heading">Cocktails</h2>
+              <h2 id="pastas-heading">Pastas</h2>
+              <p id="menu-pastas-note" class="menu-section-note"></p>
             </div>
-            <div id="menu-cocktails"></div>
+            <ul id="menu-pastas" class="menu-items-list" aria-label="Pastas">
+              <!-- Populated by JS -->
+            </ul>
           </section>
 
-          <!-- Margaritas -->
-          <section id="margaritas" class="menu-section" aria-labelledby="margaritas-heading">
+          <!-- Build Your Own Pizza -->
+          <section id="build-your-own" class="menu-section" aria-labelledby="byo-heading">
             <div class="menu-section-header">
-              <h2 id="margaritas-heading">Margaritas</h2>
+              <h2 id="byo-heading">Build Your Own Pizza</h2>
             </div>
-            <div id="menu-margaritas"></div>
+            <div id="menu-byo">
+              <!-- Populated by JS -->
+            </div>
           </section>
 
-          <!-- Dessert Martinis -->
-          <section id="dessert-martinis" class="menu-section" aria-labelledby="dessert-martinis-heading">
+          <!-- Desserts -->
+          <section id="desserts" class="menu-section" aria-labelledby="desserts-heading">
             <div class="menu-section-header">
-              <h2 id="dessert-martinis-heading">Dessert Martinis</h2>
+              <h2 id="desserts-heading">Desserts</h2>
+              <p id="menu-desserts-note" class="menu-section-note"></p>
             </div>
-            <div id="menu-dessert-martinis"></div>
+            <ul id="menu-desserts" class="menu-items-list" aria-label="Desserts">
+              <!-- Populated by JS -->
+            </ul>
           </section>
 
-          <!-- Beer -->
-          <section id="beer" class="menu-section" aria-labelledby="beer-heading">
+          <!-- Catering / Hours -->
+          <section id="catering" class="menu-section" aria-labelledby="catering-heading">
             <div class="menu-section-header">
-              <h2 id="beer-heading">Beer</h2>
+              <h2 id="catering-heading">Catering &amp; Hours</h2>
             </div>
-            <div id="menu-beer"></div>
+            <div id="menu-catering">
+              <!-- Populated by JS -->
+            </div>
           </section>
 
         </div>
