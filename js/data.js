@@ -16,7 +16,7 @@ const BAR10 = {
   email: "bar10wyo@gmail.com",
   mapLink: "https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501",
   social: {
-    facebook: "https://www.facebook.com/bar10riverton",
+    facebook: "https://www.facebook.com/bar10wyo",
     instagram: "https://www.instagram.com/bar10riverton",
   },
   hours: [
