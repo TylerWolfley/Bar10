@@ -87,31 +87,77 @@
     el.innerHTML = '<table class="hours-table"><tbody>' + rows + "</tbody></table>";
   }
 
+  /* ── HTML escape utility ───────────────────────────────── */
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
   /* ── Render menu sections ──────────────────────────────── */
   function renderMenu() {
     if (typeof BAR10 === "undefined") return;
-    const m = BAR10.menu;
-    renderMenuList("menu-pizzas", m.pizzas);
+    var m = BAR10.menu;
+    renderPizzaCards("menu-pizzas", m.pizzas);
     renderMenuList("menu-appetizers", m.appetizers);
     renderMenuList("menu-salads", m.salads);
-    renderMenuNote("menu-cocktails", m.cocktails.note);
-    renderMenuNote("menu-margaritas", m.margaritas.note);
-    renderMenuNote("menu-dessert-martinis", m.dessertMartinis.note);
-    renderMenuNote("menu-beer", m.beer.note);
+    renderMenuDrink("menu-cocktails", m.cocktails);
+    renderMenuDrink("menu-margaritas", m.margaritas);
+    renderMenuDrink("menu-dessert-martinis", m.dessertMartinis);
+    renderMenuDrink("menu-beer", m.beer);
   }
 
-  function renderMenuList(id, items) {
-    const el = document.getElementById(id);
+  function renderPizzaCards(id, items) {
+    var el = document.getElementById(id);
     if (!el) return;
     el.innerHTML = items.map(function (item) {
-      return '<li class="menu-item">' + item.name + "</li>";
+      var photoHtml = item.image
+        ? '<img src="' + esc(item.image) + '" alt="' + esc(item.name) + ' \u2014 specialty pizza at Bar 10" loading="lazy" onerror="this.closest(\'.menu-pizza-photo\').classList.add(\'menu-pizza-photo--empty\')" />'
+        : "";
+      return (
+        '<div class="menu-pizza-card">' +
+        '<div class="menu-pizza-photo' + (item.image ? "" : " menu-pizza-photo--empty") + '">' + photoHtml + "</div>" +
+        '<div class="menu-pizza-info">' +
+        '<div class="menu-pizza-name">' + esc(item.name) + "</div>" +
+        (item.desc ? '<div class="menu-pizza-desc">' + esc(item.desc) + "</div>" : "") +
+        "</div>" +
+        "</div>"
+      );
     }).join("");
   }
 
-  function renderMenuNote(id, note) {
-    const el = document.getElementById(id);
+  function renderMenuList(id, items) {
+    var el = document.getElementById(id);
     if (!el) return;
-    el.innerHTML = '<p class="menu-note">' + note + "</p>";
+    el.innerHTML = items.map(function (item) {
+      if (item.desc) {
+        return (
+          '<li class="menu-item menu-item--described">' +
+          '<span class="menu-item-name">' + esc(item.name) + "</span>" +
+          '<span class="menu-item-desc">' + esc(item.desc) + "</span>" +
+          "</li>"
+        );
+      }
+      return '<li class="menu-item">' + esc(item.name) + "</li>";
+    }).join("");
+  }
+
+  function renderMenuDrink(id, data) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var html = "";
+    if (data.categories && data.categories.length) {
+      html += '<div class="menu-drink-categories">';
+      data.categories.forEach(function (cat) {
+        html += '<div class="menu-drink-category"><span class="menu-drink-category-name">' + esc(cat) + "</span></div>";
+      });
+      html += "</div>";
+    }
+    html += '<p class="menu-note">' + esc(data.note) + "</p>";
+    el.innerHTML = html;
   }
 
   /* ── Render events ─────────────────────────────────────── */
