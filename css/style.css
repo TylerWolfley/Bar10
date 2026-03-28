@@ -119,11 +119,11 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
 }
 
 section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .section-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 
 .section-header--center {
@@ -192,7 +192,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 /* ── Nav ───────────────────────────────────────────────────── */
@@ -370,7 +370,7 @@ section {
   position: relative;
   z-index: 1;
   max-width: 760px;
-  padding: 5rem 0 6rem;
+  padding: 3rem 0 4rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -488,19 +488,19 @@ section {
 
 /* ── Editorial menu preview ────────────────────────────────── */
 .menu-preview {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .menu-preview-layout {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
 @media (min-width: 768px) {
   .menu-preview-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3.5rem;
   }
 }
 
@@ -589,8 +589,8 @@ section {
   font-size: 0.95rem;
   line-height: 1.75;
   max-width: 400px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .events-preview-cta {
@@ -600,19 +600,19 @@ section {
 .events-preview {  background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .events-preview-layout {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
 @media (min-width: 768px) {
   .events-preview-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3.5rem;
     align-items: center;
   }
 }
@@ -653,7 +653,7 @@ section {
 
 /* ── Location strip ────────────────────────────────────────── */
 .location-strip {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -867,7 +867,7 @@ section {
 .page-hero {
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
-  padding: 4rem 0 3.5rem;
+  padding: 2.5rem 0 2rem;
   text-align: center;
 }
 
@@ -889,7 +889,7 @@ section {
 .menu-sections {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 3rem;
 }
 
 .menu-section {
@@ -897,8 +897,8 @@ section {
 }
 
 .menu-section-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -963,7 +963,7 @@ section {
   font-size: 0.875rem;
   color: var(--color-cream-dim);
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   line-height: 1.65;
 }
 
@@ -976,8 +976,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1000,21 +1000,21 @@ section {
 
 /* ── Events page ───────────────────────────────────────────── */
 .event-feature {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 }
 
 .event-feature-layout {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .event-feature-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3.5rem;
   }
 }
 
@@ -1104,13 +1104,13 @@ section {
 
 .about-layout {
   display: grid;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 900px) {
   .about-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
   }
 }
 
@@ -1153,16 +1153,16 @@ section {
 
 /* ── Gallery page ──────────────────────────────────────────── */
 .gallery-intro {
-  padding: 4rem 0 2rem;
+  padding: 2.5rem 0 1.5rem;
 }
 
 .gallery-section {
-  padding: 2rem 0 4rem;
+  padding: 1.5rem 0 2.5rem;
 }
 
 .gallery-section + .gallery-section {
   border-top: 1px solid var(--color-border);
-  padding-top: 4rem;
+  padding-top: 2.5rem;
 }
 
 .gallery-section-label {
@@ -1243,13 +1243,13 @@ section {
 /* ── Contact page ──────────────────────────────────────────── */
 .contact-layout {
   display: grid;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .contact-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3.5rem;
   }
 }
 
@@ -1346,7 +1346,7 @@ section {
 /* ── Thin CTA bar ──────────────────────────────────────────── */
 .cta-bar {
   border-top: 1px solid var(--color-border);
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .cta-bar-inner {
