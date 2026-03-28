@@ -34,13 +34,17 @@
   {
     "@context": "https://schema.org",
     "@type": ["BarOrPub", "Restaurant"],
+    "@id": "https://bar10riverton.com/#business",
     "name": "Bar 10",
+    "alternateName": "Bar Ten",
+    "slogan": "Raising the Bar in County Ten.",
     "url": "https://bar10riverton.com",
     "telephone": "+1-307-856-2337",
     "email": "bar10wyo@gmail.com",
-    "description": "Wyoming Bred. Craft Beer. Craft Cocktails. Artisan Pizza. Raising the Bar in County Ten.",
+    "description": "Downtown Riverton's elevated bar and restaurant. Specialty artisan pizza, craft cocktails, Wyoming beer on tap, trivia nights, and live music at 114 S Broadway Ave.",
     "servesCuisine": ["Pizza", "American", "Bar Food"],
     "priceRange": "$$",
+    "currenciesAccepted": "USD",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "114 S Broadway Ave",
@@ -49,14 +53,47 @@
       "postalCode": "82501",
       "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 43.0236, "longitude": -108.3809 },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.0236,
+      "longitude": -108.3809
+    },
+    "hasMap": "https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501",
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "16:00", "closes": "23:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "16:00", "closes": "24:00" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "16:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "16:00",
+        "closes": "00:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "00:00",
+        "closes": "00:00"
+      }
     ],
     "menu": "https://bar10riverton.com/menu.html",
-    "image": "https://bar10riverton.com/images/bar10.jpg",
-    "logo": "https://bar10riverton.com/images/bar10logo.png",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://bar10riverton.com/images/bar10.jpg",
+      "description": "Bar 10 interior, downtown Riverton, Wyoming"
+    },
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bar10riverton.com/images/bar10logo.png"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Riverton",
+      "sameAs": "https://en.wikipedia.org/wiki/Riverton,_Wyoming"
+    },
     "sameAs": [
       "https://www.facebook.com/bar10wyo",
       "https://www.instagram.com/bar10riverton"
@@ -66,32 +103,51 @@
 </head>
 <body class="page-body">
 
-  <!-- ── Navigation ─────────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Bar 10 home"><img src="images/bar10logo.png" alt="Bar 10" class="nav-logo" width="69" height="46"></a>
-      <button
-        class="nav-toggle"
-        id="nav-toggle"
-        aria-controls="nav-menu"
-        aria-expanded="false"
-        aria-label="Open navigation menu"
-      >
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-menu" id="nav-menu" role="navigation">
-        <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="tel:+13078562337" class="btn btn-primary nav-cta" aria-label="Call Bar 10">Call Now</a>
+  <!-- ── Site top: utility bar + brand + nav ──────────────── -->
+  <div class="site-top">
+
+    <div class="utility-bar" aria-label="Contact Bar 10">
+      <div class="container utility-bar-inner">
+        <a href="tel:+13078562337" class="utility-bar-link">(307) 856-2337</a>
+        <span class="utility-bar-sep" aria-hidden="true">·</span>
+        <a href="mailto:bar10wyo@gmail.com" class="utility-bar-link">bar10wyo@gmail.com</a>
       </div>
     </div>
-  </nav>
+
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a href="index.html" class="header-brand" aria-label="Bar 10 home">
+          <img src="images/bar10logo.png" alt="Bar 10" class="header-logo" width="90" height="60">
+        </a>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <div class="nav-menu" id="nav-menu" role="navigation">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <a href="tel:+13078562337" class="btn btn-primary nav-cta" aria-label="Call Bar 10">Call Now</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
 
   <main>
 
