@@ -507,6 +507,12 @@ section {
   justify-content: center;
 }
 
+@media (max-width: 530px) {
+  .hero h1 {
+    font-size: 9vw;
+  }
+}
+
 /* ── Divider ───────────────────────────────────────────────── */
 .divider {
   height: 1px;
