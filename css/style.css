@@ -12,11 +12,11 @@
 
 :root {
   /* ── Dark palette — deep moody, warm charcoal ── */
-  --color-bg:        #0f0d0b;   /* deep warm near-black — primary background */
-  --color-surface:   #181411;   /* slightly lighter dark — alternate sections */
-  --color-surface2:  #201c18;   /* medium dark — deeper alternates */
-  --color-border:    #2c2520;   /* subtle warm border — dividers */
-  --color-border-lt: #3a302a;   /* slightly lighter border */
+  --color-bg:        #1c1814;   /* warm charcoal — primary background */
+  --color-surface:   #252017;   /* slightly lighter — alternate sections */
+  --color-surface2:  #2d2820;   /* medium dark — deeper alternates */
+  --color-border:    #3d3530;   /* warm border — dividers */
+  --color-border-lt: #504540;   /* lighter border */
 
   /* ── Accent — rich warm gold ── */
   --color-amber:     #c49038;   /* rich warm gold */
@@ -25,13 +25,13 @@
 
   /* ── Text — warm cream on dark backgrounds ── */
   --color-cream:     #ede5d8;   /* warm cream — primary text */
-  --color-cream-dim: #9a8b7c;   /* warm medium — secondary text */
+  --color-cream-dim: #c0ae9c;   /* warm medium — secondary text */
   --color-white:     #ffffff;
 
   /* ── Dark section tokens — hero & footer ── */
-  --color-dark:        #080604;   /* deepest dark — hero background */
+  --color-dark:        #100e0b;   /* deepest dark — hero background */
   --color-dark-text:   #ede5d8;   /* warm cream for dark sections */
-  --color-dark-dim:    #9a8b7c;   /* dimmed warm text on dark */
+  --color-dark-dim:    #c0ae9c;   /* dimmed warm text on dark */
   --color-dark-border: #1a1511;   /* subtle border on dark */
 
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -926,12 +926,16 @@ section {
 
 .menu-section {
   scroll-margin-top: calc(var(--header-total) + 2rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
 }
 
 .menu-section-header {
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-lt);
 }
 
 .menu-section-header h2 {
@@ -1020,7 +1024,7 @@ section {
   text-transform: uppercase;
   padding: 0.4rem 0.875rem;
   border-radius: 99px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-lt);
   color: var(--color-cream-dim);
   transition: all var(--transition);
 }
@@ -1745,8 +1749,8 @@ section {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.25rem 1.5rem;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-surface2);
+  border: 1px solid var(--color-border-lt);
   border-radius: var(--radius);
 }
 
