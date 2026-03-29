@@ -1811,6 +1811,31 @@ section {
   line-height: 1.4;
 }
 
+.byo-category--veggies {
+  grid-column: span 2;
+}
+
+.byo-category--veggies .byo-category-items {
+  display: block;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.byo-category--veggies .byo-category-items li {
+  break-inside: avoid;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 479px) {
+  .byo-category--veggies {
+    grid-column: span 1;
+  }
+
+  .byo-category--veggies .byo-category-items {
+    columns: 1;
+  }
+}
+
 /* ── Desserts footer note ───────────────────────────────────── */
 .menu-desserts-footer {
   margin-top: 1.25rem;
