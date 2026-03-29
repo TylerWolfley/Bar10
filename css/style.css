@@ -1424,18 +1424,19 @@ section {
   position: relative;
   min-height: 520px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: hidden;
   background-color: var(--color-dark);
+  padding-top: 2.5rem;
   padding-bottom: 3.5rem;
 }
 
 .about-hero-bg {
   position: absolute;
-  inset: 0;
+  inset: -5% 0 0 0;
   background:
     linear-gradient(to top, rgba(8,6,4,0.97) 0%, rgba(8,6,4,0.6) 50%, rgba(8,6,4,0.2) 100%),
-    url('../images/bar10outside.jpg') center 23% / cover no-repeat;
+    url('../images/bar10outside.jpg') center 28% / cover no-repeat;
   z-index: 0;
 }
 
@@ -1443,7 +1444,7 @@ section {
   position: relative;
   z-index: 1;
   max-width: 760px;
-  padding-top: 4rem;
+  padding-top: 1rem;
 }
 
 .about-hero-content .section-label {
