@@ -1465,23 +1465,6 @@ section {
   line-height: 1.75;
 }
 
-/* About Manifesto */
-.about-manifesto {
-  background-color: var(--color-dark);
-  border-top: 3px solid var(--color-amber);
-  border-bottom: 1px solid rgba(196, 144, 56, 0.15);
-  padding: 3rem 0;
-}
-
-.about-manifesto-quote {
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-style: italic;
-  color: var(--color-cream);
-  line-height: 1.45;
-  max-width: 820px;
-}
-
 /* About Story */
 .about-story {
   padding: 4.5rem 0;
@@ -1503,17 +1486,6 @@ section {
 .about-story-aside {
   position: sticky;
   top: calc(var(--header-total) + 2rem);
-}
-
-.about-story-pull {
-  font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 3vw, 1.9rem);
-  font-style: italic;
-  line-height: 1.4;
-  color: var(--color-cream);
-  border-left: 3px solid var(--color-amber);
-  padding-left: 1.5rem;
-  margin-top: 1.25rem;
 }
 
 /* About What We Do */
