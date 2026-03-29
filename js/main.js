@@ -248,7 +248,8 @@
     /* Topping categories */
     html += '<div class="byo-categories">';
     data.categories.forEach(function (cat) {
-      html += '<div class="byo-category">';
+      var catClass = "byo-category" + (cat.label === "Veggies" ? " byo-category--veggies" : "");
+      html += '<div class="' + catClass + '">';
       html += '<h4 class="byo-category-label">' + esc(cat.label) + "</h4>";
       html += '<ul class="byo-category-items">';
       cat.items.forEach(function (item) {
