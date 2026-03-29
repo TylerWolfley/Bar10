@@ -1531,71 +1531,6 @@ section {
   transform: scale(1.03);
 }
 
-/* ── Menu pizza cards ──────────────────────────────────────── */
-.menu-pizza-grid {
-  display: grid;
-  gap: 1px;
-  grid-template-columns: 1fr;
-  border: 1px solid var(--color-border);
-}
-
-@media (min-width: 480px) {
-  .menu-pizza-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .menu-pizza-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.menu-pizza-card {
-  background-color: var(--color-surface);
-  overflow: hidden;
-}
-
-.menu-pizza-photo {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background-color: var(--color-surface2);
-}
-
-.menu-pizza-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  display: block;
-}
-
-.menu-pizza-card:hover .menu-pizza-photo img {
-  transform: scale(1.03);
-}
-
-.menu-pizza-photo--empty {
-  background-color: var(--color-surface2);
-}
-
-.menu-pizza-info {
-  padding: 1.25rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.menu-pizza-name {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--color-cream);
-  margin-bottom: 0.35rem;
-}
-
-.menu-pizza-desc {
-  font-size: 0.8rem;
-  color: var(--color-cream-dim);
-  line-height: 1.55;
-}
-
 /* ── Menu item with description ────────────────────────────── */
 .menu-item--described {
   flex-direction: column;
@@ -1613,26 +1548,6 @@ section {
   font-size: 0.78rem;
   color: var(--color-cream-dim);
   line-height: 1.55;
-}
-
-/* ── Menu drink sections ───────────────────────────────────── */
-.menu-drink-categories {
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--color-border);
-}
-
-.menu-drink-category {
-  padding: 1.25rem 1.5rem;
-  background-color: var(--color-surface);
-}
-
-.menu-drink-category-name {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  color: var(--color-cream);
 }
 
 .contact-map-embed iframe {
