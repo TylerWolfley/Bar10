@@ -915,7 +915,7 @@ section {
 .menu-sections {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .menu-section {
