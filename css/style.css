@@ -1789,6 +1789,13 @@ section {
   gap: 1.5rem 2rem;
 }
 
+/* Desktop: pin to 6 equal columns so Meat+Sauce+Cheese+Veggies(×2)+Drizzle all fit on one row */
+@media (min-width: 900px) {
+  .byo-categories {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 .byo-category-label {
   font-family: var(--font-heading);
   font-size: 0.9rem;
