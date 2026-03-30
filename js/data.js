@@ -29,6 +29,7 @@ const BAR10 = {
     { day: "Sunday",    open: null,      close: null        },
   ],
   menu: {
+    favoritesNote: "Bar Ten signatures — crowd-pleasing plates and house specialties.",
     favorites: [
       { name: "Chicken Pot Pie",     price: "$10.99", desc: "An all-American comfort food classic. Large, meaty chunks of juicy white chicken breast with sweet carrots and peas, covered in a buttery cream sauce." },
       { name: "Italian Slider",      price: "$11.99", desc: "Canadian bacon, pepperoni, mozzarella, lettuce, tomatoes, red onion, pepperoncini, and house dressing." },
@@ -105,7 +106,7 @@ const BAR10 = {
         { size: "14\u2033 Pizza",  basePrice: "$16.99", toppingPrice: "$1.50" },
         { size: "7\u2033 Pizza",   basePrice: "$8.99",  toppingPrice: "$0.75" },
       ],
-      crusts: "House crust, thin crust, flatbread, or gluten free crust.",
+      crusts: "House crust, thin crust, flatbread, or 12\u2033 cauliflower crust.",
       toppingNote: "Unlimited Toppings",
       categories: [
         { label: "Meat",    items: ["Pepperoni", "Spicy Italian Sausage", "Meatball", "Shrimp", "Bacon", "Pulled Pork", "Chicken", "Chorizo", "Lamb"] },
@@ -123,6 +124,32 @@ const BAR10 = {
         { name: "Southern Cross", price: "$8.99", desc: "Old Weller bourbon and chocolate/caramel sauce over vanilla bean ice cream topped with spiced walnuts, whipped cream, and a cherry." },
       ],
       footer: "Ask your bartender for ideas.",
+    },
+    drinks: {
+      note: "Full Bar \u00b7 Craft Cocktails \u00b7 Local & Craft Beer \u00b7 Wine \u00b7 Spirits",
+      categories: [
+        {
+          label: "Craft Cocktails",
+          desc: "Handcrafted cocktails made with premium spirits. Seasonal specialties and nightly features rotate — ask your bartender what\u2019s on tonight.",
+        },
+        {
+          label: "Beer",
+          desc: "Local Wyoming craft beer and regional favorites on tap and in bottles. Selection rotates — ask what\u2019s pouring.",
+        },
+        {
+          label: "Wine",
+          desc: "Red and white wine by the glass or bottle. Ask your server for current selections.",
+        },
+        {
+          label: "Spirits",
+          desc: "Well and top-shelf spirits including bourbon, whiskey, vodka, gin, tequila, and rum.",
+        },
+        {
+          label: "Non-Alcoholic",
+          desc: "Sodas, juices, and house-made non-alcoholic options available.",
+        },
+      ],
+      footer: "Pricing and daily specials vary. Ask your bartender for current selections.",
     },
     catering: {
       cateringNote: "We are now able to cater your big events. Everything is made from scratch with fresh ingredients. We also offer top-shelf bar service. See server for details and application.",
