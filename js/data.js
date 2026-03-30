@@ -17,7 +17,7 @@ const BAR10 = {
   mapLink: "https://maps.google.com/?q=114+S+Broadway+Ave+Riverton+WY+82501",
   social: {
     facebook: "https://www.facebook.com/bar10wyo",
-    instagram: "https://www.instagram.com/bar10riverton",
+    instagram: "https://www.instagram.com/bar10wyo/",
   },
   hours: [
     { day: "Monday",    open: "4:00 PM", close: "11:00 PM" },
