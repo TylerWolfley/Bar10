@@ -2056,42 +2056,100 @@ section {
 .drinks-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.drinks-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .drinks-categories {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  gap: 2.5rem;
 }
 
 .drinks-category {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.drinks-category-label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-cream);
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.4rem;
+  margin: 0;
+}
+
+/* Described items — 2-column card grid */
+.drinks-category-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drinks-category-items--described {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .drinks-category-items--described {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .drinks-category-items--described {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Simple items — compact multi-column list */
+.drinks-category-items--simple {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.35rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .drinks-category-items--simple {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .drinks-category-items--simple {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Individual drink item */
+.drinks-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.drinks-category-items--described .drinks-item {
+  padding: 0.65rem 0.85rem;
   background-color: var(--color-surface2);
   border: 1px solid var(--color-border-lt);
   border-radius: var(--radius);
 }
 
-.drinks-category-label {
+.drinks-item-name {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-cream);
   font-weight: 700;
 }
 
-.drinks-category-desc {
-  font-size: 0.82rem;
+.drinks-item-desc {
+  font-size: 0.8rem;
   color: var(--color-cream-dim);
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+.drinks-category-items--simple .drinks-item-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-cream-dim);
 }
 
 .drinks-footer {

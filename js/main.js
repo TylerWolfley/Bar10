@@ -302,14 +302,28 @@
 
     var html = '<div class="drinks-wrapper">';
 
-    html += '<div class="drinks-categories">';
     data.categories.forEach(function (cat) {
+      var hasDesc = cat.items && cat.items.some(function (item) { return item.desc; });
+      var itemsClass = "drinks-category-items" + (hasDesc ? " drinks-category-items--described" : " drinks-category-items--simple");
+
       html += '<div class="drinks-category">';
-      html += '<h4 class="drinks-category-label">' + esc(cat.label) + "</h4>";
-      html += '<p class="drinks-category-desc">' + esc(cat.desc) + "</p>";
+      html += '<h3 class="drinks-category-label">' + esc(cat.label) + "</h3>";
+
+      if (cat.items && cat.items.length) {
+        html += '<ul class="' + itemsClass + '">';
+        cat.items.forEach(function (item) {
+          html += '<li class="drinks-item">';
+          html += '<span class="drinks-item-name">' + esc(item.name) + "</span>";
+          if (item.desc) {
+            html += '<span class="drinks-item-desc">' + esc(item.desc) + "</span>";
+          }
+          html += "</li>";
+        });
+        html += "</ul>";
+      }
+
       html += "</div>";
     });
-    html += "</div>";
 
     if (data.footer) {
       html += '<p class="drinks-footer">' + esc(data.footer) + "</p>";
