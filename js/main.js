@@ -101,6 +101,7 @@
   function renderMenu() {
     if (typeof BAR10 === "undefined") return;
     var m = BAR10.menu;
+    renderNoted("menu-favorites-note", m.favoritesNote);
     renderPricedList("menu-favorites", m.favorites);
     renderPizzaList("menu-pizzas", m.pizzas);
     renderAppetizers("menu-appetizers", m.appetizers);
@@ -111,6 +112,7 @@
     renderBuildYourOwn("menu-byo", m.buildYourOwn);
     renderNoted("menu-desserts-note", m.desserts.note);
     renderDesserts("menu-desserts", m.desserts);
+    renderDrinks("menu-drinks", m.drinks);
     renderCatering("menu-catering", m.catering);
   }
 
@@ -291,6 +293,30 @@
         el.parentElement.appendChild(footer);
       }
     }
+  }
+
+  /* Drinks / Bar */
+  function renderDrinks(id, data) {
+    var el = document.getElementById(id);
+    if (!el) return;
+
+    var html = '<div class="drinks-wrapper">';
+
+    html += '<div class="drinks-categories">';
+    data.categories.forEach(function (cat) {
+      html += '<div class="drinks-category">';
+      html += '<h4 class="drinks-category-label">' + esc(cat.label) + "</h4>";
+      html += '<p class="drinks-category-desc">' + esc(cat.desc) + "</p>";
+      html += "</div>";
+    });
+    html += "</div>";
+
+    if (data.footer) {
+      html += '<p class="drinks-footer">' + esc(data.footer) + "</p>";
+    }
+
+    html += "</div>";
+    el.innerHTML = html;
   }
 
   /* Catering / Hours */
