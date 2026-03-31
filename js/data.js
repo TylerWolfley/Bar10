@@ -226,31 +226,51 @@ const BAR10 = {
           ],
         },
         {
-          label: "Bottled Beer",
+          label: "Domestic",
           items: [
-            { name: "Bud Light" },
             { name: "Budweiser" },
             { name: "Coors Original" },
+          ],
+        },
+        {
+          label: "Light Beer",
+          items: [
+            { name: "Bud Light" },
             { name: "Coors Light" },
             { name: "Miller Lite" },
             { name: "MGD 64" },
+          ],
+        },
+        {
+          label: "Imports",
+          items: [
             { name: "Corona" },
             { name: "Guinness" },
-            { name: "Sam Adams" },
-            { name: "Sessions" },
             { name: "Red Stripe" },
-            { name: "Shiner Bock" },
             { name: "Stella Artois" },
             { name: "Newcastle" },
+            { name: "Boddingtons Pub Ale" },
+          ],
+        },
+        {
+          label: "Craft & Regional",
+          items: [
+            { name: "Sam Adams" },
+            { name: "Sessions" },
+            { name: "Shiner Bock" },
             { name: "Deschutes" },
             { name: "Bayern" },
             { name: "Wind River Brewery" },
-            { name: "Boddingtons Pub Ale" },
             { name: "Sierra Nevada" },
             { name: "Mirror Pond" },
             { name: "Odell" },
             { name: "New Belgium" },
             { name: "Oskar Blues" },
+          ],
+        },
+        {
+          label: "Non-Alcoholic",
+          items: [
             { name: "Kaliber", desc: "Non-alcoholic beer by Guinness." },
           ],
         },
